@@ -1,9 +1,11 @@
 {% extends 'base.html' %} {% block content %}
 
-<p>Name: {{character.name}}</p>
-<p>Height: {{character.height}}cm</p>
-<p>Weight: {{character.mass}}kg</p>
-<p>Hair Color: {{character.hair_color}}</p>
-<p>Eye Color: {{character.eye_color}}</p>
-
+</section id="deets">
+    <h1>Character Deets:</h1>
+    <p>Name: <strong>{{character.name}}</strong></p>
+    <p>Height: {{character.height}}cm</p>
+    <p>Mass: {{character.mass}}kg</p>
+    <p>Hair Colour: {{character.hair_color}}</p>
+    <p>Eye Colour: {{character.eye_color}}</p>
+<section>
 {% endblock content%}

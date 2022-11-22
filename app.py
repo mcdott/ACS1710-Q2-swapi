@@ -6,7 +6,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def search():
-    return render_template('character-search-form.html')
+    context = {
+    'valid_id': True
+    }
+    return render_template('character-search-form.html', **context)
 
 @app.route('/results')
 def results():
@@ -14,15 +17,18 @@ def results():
     character_id = request.args.get('character_id')
     character_response = requests.get(swapi_url + 'people/' + character_id)
     character_result = json.loads(character_response.content)
-    # >>>>>>>
-    print(character_id)
-    print(character_result)
-
 
     context = {
-        'character': character_result
+            'character': character_result
+            }
+    try: 
+        check_for_key = character_result['name']
+        return render_template('results.html', **context)
+    except KeyError:
+        context = {
+            'valid_id': False
         }
-    return render_template('results.html', **context)
+        return render_template('character-search-form.html', **context)
 
 
 if __name__ == '__main__':

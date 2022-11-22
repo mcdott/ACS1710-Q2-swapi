@@ -1,10 +1,12 @@
 {% extends 'base.html' %} {% block content %}
 <header>
-  <h1>Star Wars Character Deets</h1>
+  <h1>Star Wars API Search</h1>
 </header>
 <form action="/results" method="GET">
   <p>Search for a Star Wars character:</p>
   <input type="text" autofocus placeholder="Character ID" name="character_id" />
   <button type="submit">Search</button>
 </form>
-{% endblock content %}
+{% if not valid_id %}
+<p id="error">Please enter a valid character id number</p>
+{% endif %} {% endblock content %}

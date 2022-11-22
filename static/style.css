@@ -1,0 +1,22 @@
+body {
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: large;
+}
+
+h1 {
+  font-size: large;
+}
+
+#deets {
+  color: white;
+  background-color: black;
+}
+
+#error {
+  color: red;
+}
+
+form {
+  padding: 0.5em;
+}
