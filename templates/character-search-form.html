@@ -1,24 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <header>
-      <h1>Star Wars Character Deets</h1>
-    </header>
-    <form action="/results" method="GET">
-      <p>Search for a Star Wars character:</p>
-      <input
-        type="text"
-        autofocus
-        placeholder="Character ID"
-        name="character_id"
-      />
-      <button type="submit">Search</button>
-    </form>
-  </body>
-</html>
+{% extends 'base.html' %} {% block content %}
+<header>
+  <h1>Star Wars Character Deets</h1>
+</header>
+<form action="/results" method="GET">
+  <p>Search for a Star Wars character:</p>
+  <input type="text" autofocus placeholder="Character ID" name="character_id" />
+  <button type="submit">Search</button>
+</form>
+{% endblock content %}
